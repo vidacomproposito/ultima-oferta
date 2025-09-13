@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Última Oportunidade</title>
+    <meta name="description" content="Os 21 dias vão passar de qualquer jeito... aproveite agora e dê o primeiro passo para transformação!">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="backredirect-container">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="timer">
+                ⏳ Oferta válida por: <span id="countdown">03:00</span>
+            </div>
+            <h1>NÃO SAIA AGORA</h1>
+            <h2>Não recuse sua Bênção!</h2>
+            <br>
+            <p>Você viu o caminho pra destravar sua fé, sentiu que Deus te trouxe até aqui... e agora vai abandonar tudo? Essa oferta é um presente único que pode mudar sua vida em 21 dias, mas se você sair, ela some pra sempre. Milhares se arrependem de deixar portas como essa se fecharem, ficando presos em dúvidas e frustrações. Não jogue fora o que Deus preparou pra você! <strong>Clique agora e agarre essa transformação antes que seja tarde.</strong>.</p>
+            
+            <p class="price">
+                <span class="old-price">De: R$27,90</span> Por: R$17,90
+            </p>
+            <p class="urgencia">⚠ Não adie: Ative sua fé HOJE ou continue preso nos mesmos problemas. Você recebeu essa chance – não a desperdice por medo ou preguiça!</p>
+
+            <ul>
+                <li>Ative sua fé e destrave sua vida em 21 dias</li>
+                <li>Supere bloqueios financeiros, emocionais e espirituais</li>
+                <li>Sinta Deus mais perto ou lamente por não ter agido</li>
+            </ul>
+
+            <a href="#" id="ctaButton" class="cta-button">QUERO MINHA TRANSFORMAÇÃO AGORA POR R$17,90!</a>
+
+            <p class="final-msg">⏳ Os minutos estão correndo – se você sair, essa oferta some e você volta pro ciclo de frustração. Você não recebeu essa oportunidade atoa... não a desperdice, ou lide com as consequências.</p>
+        </div>
+    </div>
+
+    <script>
+        const ctaButton = document.getElementById('ctaButton');
+        ctaButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = "https://pay.kirvano.com/68a2974c-173c-40a9-b2db-520f6595b299";
+        });
+
+        let timeLeft = 180;
+        const countdownEl = document.getElementById("countdown");
+
+         const timer = setInterval(() => {
+            let minutes = Math.floor(timeLeft / 60);
+            let seconds = timeLeft % 60;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            countdownEl.textContent = `${minutes}:${seconds}`;
+
+            if (timeLeft <= 0) {
+                clearInterval(timer);
+                countdownEl.textContent = "00:00";
+                document.querySelector(".timer").textContent = "⏳ Tempo esgotado! Decida AGORA!";
+            }
+            timeLeft--;
+        }, 1000);
+    </script>
+</body>
+</html>
